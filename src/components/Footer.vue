@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>(c) Copyright {{ data }}</p>
+    <p>&copy; Copyright {{ data }}</p>
   </footer>
 </template>
 
