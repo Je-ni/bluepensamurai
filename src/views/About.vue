@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 gap-5 px-6 py-6 md:px-16">
+  <div class="grid md:grid-cols-2 gap-3 px-6 py-6 md:px-16">
     <div>
       <h1 class="font-normal border-b-2 text-2xl">chiemelie olibie</h1>
       <p class="py-2 text-justify">
