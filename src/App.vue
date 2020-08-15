@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="px-6 py-6 md:px-20">
     <Header />
     <router-view />
     <Footer />
@@ -27,7 +27,8 @@ export default {
   font-family: Recursive, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #cc2727;
+  background: rgb(26, 28, 68);
   font-size: 16px;
   font-weight: 300;
 }
@@ -38,10 +39,11 @@ export default {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #cc2727;
+  /* color: #2c3e50; */
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #2c3e50;
 }
 </style>
