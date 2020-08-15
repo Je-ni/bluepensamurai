@@ -1,7 +1,7 @@
 <template>
   <header>
-    <nav class="flex items-center justify-between flex-wrap px-6 py-6 md:px-16">
-      <div class="flex items-center flex-shrink-0 text-blue mr-6">
+    <nav class="flex items-center justify-between flex-wrap pb-6">
+      <div class="flex items-center flex-shrink-0 mr-6">
         <svg
           class="fill-current h-8 w-8 mr-2"
           width="54"
@@ -41,21 +41,15 @@
         <div class="text-sm md:flex-grow md:flex md:justify-end">
           <router-link
             to="/"
-            class="block mt-4 md:inline-block md:mt-0 text-blue hover:text-blue-400 mr-4"
+            class="block mt-4 md:inline-block md:mt-0 hover:text-blue-400 mr-4"
           >
             gallery
           </router-link>
           <router-link
             to="/about"
-            class="block mt-4 md:inline-block md:mt-0 text-blue hover:text-blue-400 mr-4"
+            class="block mt-4 md:inline-block md:mt-0 hover:text-blue-400 mr-4"
           >
             about
-          </router-link>
-          <router-link
-            to="/contact"
-            class="block mt-4 md:inline-block md:mt-0 text-blue hover:text-blue-400 mr-4"
-          >
-            contact
           </router-link>
         </div>
       </div>

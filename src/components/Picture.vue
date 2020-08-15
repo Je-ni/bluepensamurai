@@ -8,7 +8,7 @@
       />
     </aside>
     <section
-      class="grid md:grid-cols-2 gap-5 grid-flow-row-dense justify-around px-6 py-3 md:px-16"
+      class="grid md:grid-cols-2 gap-5 grid-flow-row-dense justify-around py-3"
     >
       <section
         v-for="(picture, index) in pictures"
@@ -17,16 +17,16 @@
         @click="e => openOverlay(e)"
       >
         <img
-          class="w-full h-full shadow-md"
+          class="w-full h-full"
           :src="picture"
           alt="Sunset in the mountains"
         />
         <div class="item-overlay">
-          <span>view ></span>
+          <span class="hover:text-blue-400">view ></span>
           <aside class="grid self-end grid-flow-col justify-between px-5 py-1">
-            <span>&copy;</span>
+            <span class="hover:text-blue-400">&copy;</span>
             <span>cold sunset</span>
-            <span>&copy;</span>
+            <span class="hover:text-blue-400">&copy;</span>
           </aside>
         </div>
       </section>
@@ -68,15 +68,14 @@ export default {
 }
 
 .item-overlay {
-  /* background: #0064ff5e; */
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(26, 28, 68, 0.68);
   grid-column: 1/-1;
   grid-row: 1/-1;
   position: relative;
   display: grid;
   transition: 0.7s;
   transform: translateY(100%);
-  color: white;
+  /* color: white; */
   font-weight: 400;
 }
 .item-overlay span {
