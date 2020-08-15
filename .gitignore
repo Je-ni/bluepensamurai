@@ -20,6 +20,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-src/assets/img/and so what.png
-src/assets/img/bleeding heart.png
-src/assets/img/avrilamoi.png
+# src/assets/img/and so what.png
+# src/assets/img/bleeding heart.png
+# src/assets/img/avrilamoi.png

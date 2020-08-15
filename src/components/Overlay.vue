@@ -1,24 +1,39 @@
 <template>
-  <section v-show="open" class="overlay">
-    <figure class="overlay-inner">
-      <button class="close" @click="open = false">x close</button>
+  <section class="overlay">
+    <figure class="grid overlay-inner border-2 border-blue-900 text-sm">
+      <button class="text-right font-light" @click="close">close</button>
       <img
-        class="w-full mb-2 shadow-md"
+        class="max-w-lg mb-2 shadow-md"
         :src="src"
         alt="Sunset in the mountains"
       />
+      <aside class="grid sm:grid-cols-3">
+        <div class="sm:col-span-2">
+          <h5 class="font-normal">image name</h5>
+          <p>a heart swollen man</p>
+        </div>
+        <div class="space-x-2 text-right">
+          <span>&copy;</span>
+          <span>&copy;</span>
+        </div>
+      </aside>
     </figure>
   </section>
 </template>
 
 <script>
 export default {
-  name: "Picture",
-  // data() {
-  //   return {
-  //     open: false
-  //   };
-  // },
+  name: "Overlay",
+  data() {
+    return {
+      show: this.open
+    };
+  },
+  methods: {
+    close() {
+      this.$emit("overlayClose");
+    }
+  },
   props: {
     src: String,
     open: Boolean
@@ -34,19 +49,16 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  /* display: none; */
+  display: grid;
   z-index: 2;
   align-items: center;
   justify-items: center;
 }
 .overlay figure {
   background: white;
-  width: 700px;
-  padding: 20px;
+  padding: 1rem;
 }
-.close {
-  background: none;
-  color: black;
-  border: 0;
+.overlay figure button {
+  font-variant: small-caps;
 }
 </style>

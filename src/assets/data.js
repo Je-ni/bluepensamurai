@@ -1,8 +1,9 @@
-module.exports = [
-  "@/assets/img/and so what.png",
-  "@/assets/img/avrilamoi.png",
-  "@/assets/img/bleeding heart.png",
-  "@/assets/img/avrilamoi.png",
-  "@/assets/img/and so what.png",
-  "@/assets/img/bleeding heart.png"
+export default [
+  require("./img/and so what.png"),
+  require("./img/avrilamoi.png"),
+  require("./img/bleeding heart.png"),
+  require("./img/avrilamoi.png"),
+  require("./img/and so what.png"),
+  require("./img/bleeding heart.png"),
+  require("./img/hero-bg.jpg")
 ];

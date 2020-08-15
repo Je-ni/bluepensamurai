@@ -5,12 +5,15 @@
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Recursive:wght@300;400&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Recursive, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 #nav {
