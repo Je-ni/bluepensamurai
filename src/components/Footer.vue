@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="text-center">
     <p>&copy; Copyright {{ data }}</p>
   </footer>
 </template>

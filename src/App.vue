@@ -1,8 +1,24 @@
 <template>
   <div id="app">
+    <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+    Footer
+  }
+};
+</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Recursive:wght@300;400&display=swap");
