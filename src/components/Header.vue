@@ -14,15 +14,13 @@
           />
         </svg>
         <span class="font-semibold text-xl tracking-tight">
-          <router-link to="/">
-            Bluepen Samurai
-          </router-link>
+          <router-link to="/">Bluepen Samurai</router-link>
         </span>
       </div>
       <div class="block md:hidden">
         <button
           @click="isOpen = !isOpen"
-          class="flex items-center px-3 py-2 border rounded text-blue border-white hover:text-blue-400 hover:border-blue-400"
+          class="flex items-center px-3 py-2 text-blue hover:text-blue-400 hover:border-blue-400"
         >
           <svg
             class="fill-current h-3 w-3"
@@ -34,25 +32,25 @@
           </svg>
         </button>
       </div>
-      <div
-        :class="isOpen ? 'block' : 'hidden'"
-        class="w-full block flex-grow md:flex md:justify-end md:w-auto"
-      >
-        <div class="text-sm md:flex-grow md:flex md:justify-end">
-          <router-link
-            to="/"
-            class="block mt-4 md:inline-block md:mt-0 hover:text-blue-400 mr-4"
-          >
-            gallery
-          </router-link>
-          <router-link
-            to="/about"
-            class="block mt-4 md:inline-block md:mt-0 hover:text-blue-400 mr-4"
-          >
-            about
-          </router-link>
+      <transition name="dropdown">
+        <div
+          :class="isOpen ? 'block active' : 'hidden'"
+          class="w-full block flex-grow md:flex md:justify-end md:w-auto"
+        >
+          <div class="text-sm text-right md:flex-grow md:flex md:justify-end">
+            <router-link
+              to="/"
+              class="block mt-4 md:inline-block md:mt-0 hover:text-blue-400 mr-4"
+              >gallery</router-link
+            >
+            <router-link
+              to="/about"
+              class="block mt-4 md:inline-block md:mt-0 hover:text-blue-400 mr-4"
+              >about</router-link
+            >
+          </div>
         </div>
-      </div>
+      </transition>
     </nav>
   </header>
 </template>

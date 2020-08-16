@@ -16,11 +16,7 @@
         class="item grid overflow-hidden"
         @click="e => openOverlay(e)"
       >
-        <img
-          class="w-full h-full"
-          :src="picture"
-          alt="Sunset in the mountains"
-        />
+        <img class="w-100" :src="picture" alt="Sunset in the mountains" />
         <div class="item-overlay">
           <span class="hover:text-blue-400">view ></span>
           <aside class="grid self-end grid-flow-col justify-between px-5 py-1">

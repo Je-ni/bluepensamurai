@@ -1,26 +1,34 @@
 <template>
-  <section class="overlay">
-    <figure class="grid overlay-inner border-2 border-red-900 text-sm">
-      <button class="text-right font-light hover:text-blue-400" @click="close">
-        close
-      </button>
-      <img
-        class="max-w-lg mb-2 shadow-md"
-        :src="src"
-        alt="Sunset in the mountains"
-      />
-      <aside class="grid sm:grid-cols-3">
-        <div class="sm:col-span-2">
-          <h5 class="font-normal">image name</h5>
-          <p>a heart swollen man</p>
-        </div>
-        <div class="space-x-2 text-right">
-          <span>&copy;</span>
-          <span>&copy;</span>
-        </div>
-      </aside>
-    </figure>
-  </section>
+  <transition name="overlay-fade">
+    <section
+      class="overlay"
+      role="dialog"
+      aria-labelledby="imageName"
+      aria-describedby="imageDescription"
+    >
+      <figure
+        class="grid overlay-inner border-2 border-red-900 text-sm w-11/12 max-w-lg"
+      >
+        <button
+          class="text-right font-light hover:text-blue-400"
+          @click="close"
+        >
+          close
+        </button>
+        <img class="mb-2 shadow-md" :src="src" alt="Sunset in the mountains" />
+        <aside class="grid sm:grid-cols-3">
+          <div class="sm:col-span-2">
+            <h5 class="font-normal" id="imageName">image name</h5>
+            <p id="imageDescription">a heart swollen man</p>
+          </div>
+          <div class="space-x-2 text-right">
+            <span>&copy;</span>
+            <span>&copy;</span>
+          </div>
+        </aside>
+      </figure>
+    </section>
+  </transition>
 </template>
 
 <script>
@@ -62,5 +70,14 @@ export default {
 }
 .overlay figure button {
   font-variant: small-caps;
+}
+.overlay-fade-enter,
+.overlay-fade-leave-active {
+  opacity: 0;
+}
+
+.overlay-fade-enter-active,
+.overlay-fade-leave-active {
+  transition: opacity 0.7s ease-in-out;
 }
 </style>

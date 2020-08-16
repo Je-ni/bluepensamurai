@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="px-6 py-6 md:px-20">
+  <div id="app" class="px-6 py-6 md:px-20 min-height-screen">
     <Header />
     <router-view />
     <Footer />
