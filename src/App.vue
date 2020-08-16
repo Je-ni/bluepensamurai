@@ -23,8 +23,13 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Recursive:wght@300;400&display=swap");
 
+@font-face {
+  font-family: "comicsans";
+  src: url("./assets/Comic Sans MS.otf") format("opentype");
+}
+
 #app {
-  font-family: Recursive, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "comicsans", Recursive, Avenir, Helvetica, Arial, sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #cc2727;
