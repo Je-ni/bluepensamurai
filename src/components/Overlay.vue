@@ -15,11 +15,11 @@
         >
           close
         </button>
-        <img class="mb-2 shadow-md" :src="src" alt="Sunset in the mountains" />
+        <img class="mb-2 shadow-md" :src="src" :alt="alt" />
         <aside class="grid sm:grid-cols-3">
           <div class="sm:col-span-2">
-            <h5 class="font-normal" id="imageName">image name</h5>
-            <p id="imageDescription">a heart swollen man</p>
+            <h5 class="font-normal" id="imageName">{{ caption }}</h5>
+            <p id="imageDescription">{{ detail }}</p>
           </div>
           <div class="space-x-2 text-right">
             <span>&copy;</span>
@@ -46,6 +46,9 @@ export default {
   },
   props: {
     src: String,
+    alt: String,
+    caption: String,
+    detail: String,
     open: Boolean
   }
 };
@@ -65,7 +68,7 @@ export default {
   justify-items: center;
 }
 .overlay figure {
-  background: rgb(26, 28, 68);
+  background: var(--bg);
   padding: 1rem;
 }
 .overlay figure button {
