@@ -7,8 +7,9 @@
         @overlayClose="closeOverlay"
       />
     </aside>
-    <section
+    <cld-context
       class="grid md:grid-cols-2 gap-5 grid-flow-row-dense justify-around py-3"
+      cloudName="chidera"
     >
       <section
         v-for="(picture, index) in pictures"
@@ -16,7 +17,7 @@
         class="item grid overflow-hidden"
         @click="e => openOverlay(e)"
       >
-        <img class="w-100" :src="picture" alt="Sunset in the mountains" />
+        <cld-image :publicId="picture.public_id" crop="scale" />
         <div class="item-overlay">
           <span class="hover:text-blue-400">view ></span>
           <aside class="grid self-end grid-flow-col justify-between px-5 py-1">
@@ -26,19 +27,22 @@
           </aside>
         </div>
       </section>
-    </section>
+    </cld-context>
   </section>
 </template>
 
 <script>
 // import pictures from "@/assets/data";
+import { CldContext, CldImage } from "cloudinary-vue";
 import Overlay from "@/components/Overlay";
 import { fetchPictures } from "@/actions";
 
 export default {
   name: "Picture",
   components: {
-    Overlay
+    Overlay,
+    CldContext,
+    CldImage
   },
   data() {
     return {
@@ -74,7 +78,7 @@ export default {
 </script>
 
 <style scope>
-.item img {
+.item .cld-image {
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
