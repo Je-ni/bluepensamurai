@@ -31,8 +31,10 @@
 </template>
 
 <script>
-import pictures from "@/assets/data";
+// import pictures from "@/assets/data";
 import Overlay from "@/components/Overlay";
+import { fetchPictures } from "@/actions";
+
 export default {
   name: "Picture",
   components: {
@@ -40,11 +42,17 @@ export default {
   },
   data() {
     return {
-      pictures: pictures,
+      pictures: [],
       showOverlay: false,
-      imgSrc: ""
+      imgSrc: "",
+      error: "",
+      base: process.env.VUE_APP_FILE_BASE
     };
   },
+  created() {
+    this.fetch();
+  },
+
   methods: {
     openOverlay(e) {
       this.showOverlay = true;
@@ -52,6 +60,14 @@ export default {
     },
     closeOverlay() {
       this.showOverlay = false;
+    },
+    async fetch() {
+      const res = await fetchPictures();
+      if (res.status === 200) {
+        this.pictures = res.data;
+      } else {
+        this.error = res.message;
+      }
     }
   }
 };
