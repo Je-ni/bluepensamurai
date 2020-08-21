@@ -17,7 +17,14 @@
         class="item grid overflow-hidden"
         @click="e => openOverlay(e)"
       >
-        <cld-image :publicId="picture.public_id" crop="scale" />
+        <cld-image
+          :publicId="picture.public_id"
+          loading="lazy"
+          crop="scale"
+          accessibility="colorblind"
+        >
+          <cld-placeholder type="pixelate"></cld-placeholder>
+        </cld-image>
         <div class="item-overlay">
           <span class="hover:text-blue-400">view ></span>
           <aside class="grid self-end grid-flow-col justify-between px-5 py-1">
