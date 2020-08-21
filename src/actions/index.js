@@ -9,7 +9,7 @@ export const handlError = error => {
 export const fetchPictures = async () => {
   try {
     const res = await axios(
-      "http://res.cloudinary.com/chidera/image/list/art.json"
+      "https://res.cloudinary.com/chidera/image/list/art.json"
     );
 
     return {
