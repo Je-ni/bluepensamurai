@@ -28,12 +28,14 @@ export default {
   src: url("./assets/Comic Sans MS.otf") format("opentype");
 }
 
+body {
+  background: rgb(26, 28, 68);
+}
 #app {
   font-family: "comicsans", Recursive, Avenir, Helvetica, Arial, sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #cc2727;
-  background: rgb(26, 28, 68);
   font-size: 16px;
   font-weight: 300;
 }
