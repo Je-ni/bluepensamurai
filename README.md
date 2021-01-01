@@ -1,5 +1,12 @@
 # bluepensamurai
 
+### TODO
+- add preloading
+- make image aligned
+- cart
+- share
+- placeholder height
+
 ## Project setup
 ```
 npm install

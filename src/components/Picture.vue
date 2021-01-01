@@ -10,6 +10,9 @@
         @overlayClose="closeOverlay"
       />
     </aside>
+
+    <!-- <vue-masonry-gallery :imgsArr="pictures" :maxCols="2"></vue-masonry-gallery> -->
+
     <cld-context
       class="grid md:grid-cols-2 gap-5 grid-flow-row-dense justify-around py-3"
       cloudName="chidera"
@@ -21,6 +24,7 @@
         @click="e => openOverlay(e, picture)"
       >
         <cld-image
+          class="w-full h-full"
           :publicId="picture.public_id"
           loading="lazy"
           crop="scale"
@@ -47,8 +51,8 @@
 </template>
 
 <script>
-// import pictures from "@/assets/data";
 import { CldContext, CldImage, CldPlaceholder } from "cloudinary-vue";
+// import VueMasonryGallery from "vue-masonry-gallery/vendor/VueMasonryGallery/VueMasonryGallery";
 import Overlay from "@/components/Overlay";
 import { fetchPictures } from "@/actions";
 
@@ -59,6 +63,7 @@ export default {
     CldContext,
     CldImage,
     CldPlaceholder
+    // VueMasonryGallery
   },
   data() {
     return {
@@ -95,6 +100,12 @@ export default {
       const res = await fetchPictures();
       if (res.status === 200) {
         this.pictures = res.data;
+        // res.data.map(pic => {
+        //   return {
+        //     src: process.env.VUE_APP_CLOUD_URL + pic.public_id,
+        //     href: pic.public_id
+        //   };
+        // });
       } else {
         this.error = res.message;
       }

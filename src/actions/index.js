@@ -8,9 +8,7 @@ export const handlError = error => {
 
 export const fetchPictures = async () => {
   try {
-    const res = await axios(
-      "https://res.cloudinary.com/chidera/image/list/art.json"
-    );
+    const res = await axios(process.env.VUE_APP_CLOUDINARY_API);
 
     return {
       status: res.status,
